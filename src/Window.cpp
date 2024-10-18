@@ -26,10 +26,14 @@ bool Window::Initialize() {
     return false;
   }
 
+  SDL_GL_MakeCurrent(sdlWindow, glContext);
+
   if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
     std::cerr << "Failed to initialize GLAD" << std::endl;
     return false;
   }
+
+  glViewport(0, 0, 800, 600);
 
   // init OPENGL here
   return true;
@@ -40,6 +44,12 @@ void Window::Update() {
   while (SDL_PollEvent(&event)) {
     if (event.type == SDL_QUIT) {
       isOpen = false;
+    } else if (event.type == SDL_WINDOWEVENT) {
+      if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
+        int width = event.window.data1;
+        int height = event.window.data2;
+        glViewport(0, 0, width, height);
+      }
     }
   }
 
