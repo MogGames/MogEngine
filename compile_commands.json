@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/zjc/Dev/MogWare/MogEngine/build",
+  "command": "/usr/bin/cc  -I/usr/include/SDL2 -I/home/zjc/Dev/MogWare/MogEngine/external/glad  -o CMakeFiles/glad.dir/external/glad/glad.c.o -c /home/zjc/Dev/MogWare/MogEngine/external/glad/glad.c",
+  "file": "/home/zjc/Dev/MogWare/MogEngine/external/glad/glad.c",
+  "output": "CMakeFiles/glad.dir/external/glad/glad.c.o"
+},
+{
+  "directory": "/home/zjc/Dev/MogWare/MogEngine/build",
+  "command": "/usr/bin/c++  -I/home/zjc/Dev/MogWare/MogEngine/external/glad -isystem /usr/include/SDL2 -std=gnu++17 -o CMakeFiles/MogEngine.dir/src/main.cpp.o -c /home/zjc/Dev/MogWare/MogEngine/src/main.cpp",
+  "file": "/home/zjc/Dev/MogWare/MogEngine/src/main.cpp",
+  "output": "CMakeFiles/MogEngine.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/zjc/Dev/MogWare/MogEngine/build",
+  "command": "/usr/bin/c++  -I/home/zjc/Dev/MogWare/MogEngine/external/glad -isystem /usr/include/SDL2 -std=gnu++17 -o CMakeFiles/MogEngine.dir/src/Window.cpp.o -c /home/zjc/Dev/MogWare/MogEngine/src/Window.cpp",
+  "file": "/home/zjc/Dev/MogWare/MogEngine/src/Window.cpp",
+  "output": "CMakeFiles/MogEngine.dir/src/Window.cpp.o"
+},
+{
+  "directory": "/home/zjc/Dev/MogWare/MogEngine/build",
+  "command": "/usr/bin/c++  -I/home/zjc/Dev/MogWare/MogEngine/external/glad -isystem /usr/include/SDL2 -std=gnu++17 -o CMakeFiles/MogEngine.dir/src/Renderer.cpp.o -c /home/zjc/Dev/MogWare/MogEngine/src/Renderer.cpp",
+  "file": "/home/zjc/Dev/MogWare/MogEngine/src/Renderer.cpp",
+  "output": "CMakeFiles/MogEngine.dir/src/Renderer.cpp.o"
+}
+]

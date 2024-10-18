@@ -1,5 +1,7 @@
 #include "Window.h"
+#include "../external/glad/glad.h"
 #include <SDL2/SDL_video.h>
+#include <iostream>
 
 Window::Window(int width, int height, const std::string &tile)
     : sdlWindow(nullptr), glContext(nullptr), isOpen(true) {}
@@ -15,7 +17,17 @@ bool Window::Initialize() {
                                SDL_WINDOWPOS_CENTERED, 800, 600,
                                SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 
-  if (sdlWindow) {
+  if (sdlWindow == NULL) {
+    return false;
+  }
+
+  glContext = SDL_GL_CreateContext(sdlWindow);
+  if (glContext == NULL) {
+    return false;
+  }
+
+  if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
+    std::cerr << "Failed to initialize GLAD" << std::endl;
     return false;
   }
 
