@@ -34,6 +34,7 @@ bool Window::Initialize() {
   }
 
   glViewport(0, 0, 800, 600);
+  glDisable(GL_DEPTH_TEST);
 
   // init OPENGL here
   return true;

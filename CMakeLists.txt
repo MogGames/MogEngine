@@ -26,11 +26,8 @@ target_include_directories(glad PUBLIC external/glad)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/external/glad)
 
 # Add Sources
-set(SRC
-    src/main.cpp
-    src/Window.cpp
-    src/Renderer.cpp
-)
+# Automatically find all .cpp files in the src/ directory and subdirectories
+file(GLOB_RECURSE SRC "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 
 add_executable(MogEngine ${SRC})
 

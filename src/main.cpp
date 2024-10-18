@@ -11,6 +11,7 @@ int main(int argc, char *argv[]) {
 
   while (window.IsOpen()) {
     renderer.Clear();
+    renderer.RenderTriangle();
     window.Update();
   }
 
