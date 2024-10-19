@@ -1,5 +1,5 @@
 #include "Renderer.h"
-#include "../external/glad/glad.h"
+#include "../../external/glad/glad.h"
 #include "Shader.h"
 #include <GL/gl.h>
 #include <cstdlib>
@@ -15,9 +15,12 @@ bool Renderer::Initialize() {
       "./src/shaders/vertex_shader.glsl", "./src/shaders/fragment_shader.glsl");
 
   float triangleVertices[] = {
-      -0.5f, -0.5f, 0.0f, // left
-      0.5f,  -0.5f, 0.0f, // right
-      0.0f,  0.5f,  0.0f  // top
+      -0.5f, -0.5f, 0.0f,
+      0.0f, // left
+      0.5f,  -0.5f,
+      0.0f, // right
+      0.0f,  0.5f,
+      // top
   };
   glGenVertexArrays(1, &triangleVAO);
   glBindVertexArray(triangleVAO);

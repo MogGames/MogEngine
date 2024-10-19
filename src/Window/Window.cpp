@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "../external/glad/glad.h"
+#include "../../external/glad/glad.h"
 #include <SDL2/SDL_video.h>
 #include <iostream>
 

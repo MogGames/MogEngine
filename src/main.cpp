@@ -1,5 +1,5 @@
-#include "Renderer.h"
-#include "Window.h"
+#include "./Graphics/Renderer.h"
+#include "./Window/Window.h"
 #include <cstdlib>
 
 typedef struct {
