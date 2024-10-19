@@ -64,15 +64,17 @@ void Renderer::Clear() {
   glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
 }
 
-void Renderer::RenderTriangle() {
+void Renderer::RenderTriangle(float r, float g, float b) {
   triangleShader->use();
+  triangleShader->setVector4("color", r, g, b, 1.0f);
   glBindVertexArray(triangleVAO);
   glDrawArrays(GL_TRIANGLES, 0, 3);
   glBindVertexArray(0);
 }
 
-void Renderer::RenderRectangle() {
+void Renderer::RenderRectangle(float r, float g, float b) {
   triangleShader->use();
+  triangleShader->setVector4("color", r, g, b, 1.0f);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, rectangleEBO);
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);

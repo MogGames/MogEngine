@@ -11,7 +11,13 @@ public:
   Shader(const std::string &vertexPath, const std::string &fragmentPath);
 
   // activate the shader program
-  void use();
+  void use() const;
+
+  void setBool(const std::string &name, bool value) const;
+  void setInt(const std::string &name, int value) const;
+  void setFloat(const std::string &name, float value) const;
+  void setVector4(const std::string &name, float x, float y, float z,
+                  float w) const;
 
 private:
   // use to check for linking/compilation errors

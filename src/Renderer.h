@@ -11,8 +11,8 @@ public:
 
   bool Initialize();
   void Clear();
-  void RenderTriangle();
-  void RenderRectangle();
+  void RenderTriangle(float r, float g, float b);
+  void RenderRectangle(float r, float g, float b);
 
 private:
   unsigned int triangleVBO;

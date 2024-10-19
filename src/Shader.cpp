@@ -63,7 +63,32 @@ Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
   glDeleteShader(fragment);
 }
 
-void Shader::use() { glUseProgram(ID); }
+void Shader::use() const { glUseProgram(ID); }
+
+void Shader::setBool(const std::string &name, bool value) const {
+  int location = glGetUniformLocation(ID, name.c_str());
+  use();
+  glUniform1i(location, (int)value);
+}
+
+void Shader::setInt(const std::string &name, int value) const {
+  int location = glGetUniformLocation(ID, name.c_str());
+  use();
+  glUniform1i(location, value);
+}
+
+void Shader::setFloat(const std::string &name, float value) const {
+  int location = glGetUniformLocation(ID, name.c_str());
+  use();
+  glUniform1f(location, value);
+}
+
+void Shader::setVector4(const std::string &name, float x, float y, float z,
+                        float w) const {
+  int location = glGetUniformLocation(ID, name.c_str());
+  use();
+  glUniform4f(location, x, y, z, w);
+}
 
 void Shader::checkCompileErrors(unsigned int shader, std::string type) {
   int success;
